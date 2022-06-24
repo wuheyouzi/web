@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+
+      /* 添加元素边框 */
+      /* * {
+            border: 1px solid black;
+        } */
+      /* 阴影 */
+      .yingying {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px -0px, rgb(0 0 0 / 12%) 0px 1px 3px -0px;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .baise {
+        background-color: white;
+      }
+
+      .flex1 {
+        flex: 1;
+      }
+
+      .column {
+        flex-direction: column;
+      }
+
+      .mg8 {
+        margin: 8px;
+      }
+
+      .mgr8 {
+        margin-right: 8px;
+      }
+
+      .mgt8 {
+        margin-top: 8px;
+      }
+
+      .DaoHang {
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        color: #666;
+        border-bottom: 1px solid #ccc;
+      }
+
+      /* 移动端适配 */
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+
+        .neiRong {
+          flex-direction: column;
+        }
+
+        .shujuQu {
+          flex-direction: column;
+        }
+
+        .youQu {
+          margin-left: 8px;
+        }
+
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="ceBian baise yingying">
+      <!-- 头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid#999;
+        "
+        class="flex"
+      >
+        <img src="" alt="宁静" style="width: 50px" height="100%" />
+        <div style="margin-left: 10px">沈思远</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="DaoHang">个人简介</div>
+        <div class="DaoHang">导航</div>
+        <div class="DaoHang">导航</div>
+        <div class="DaoHang">导航</div>
+        <div class="DaoHang">导航</div>
+      </div>
+    </div>
+    <!--主区域-->
+    <div class="flex1 flex column">
+      <!--头部栏-->
+      <div style="height: 60px; z-index: 1" class="baise yingying"></div>
+      <!--内容区-->
+      <div style="overflow: auto" class="neirong flex1 flex mg8">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mg8">
+          <!--数据区-->
+          <div class="shujuQu flex">
+            <!-- 数据块 -->
+            <div
+              style="height: 100px"
+              class="shuJu flex1 baise mgr8 yingying"
+            ></div>
+            <div
+              style="height: 100px"
+              class="shuJu flex1 baise mgr8 yingying"
+            ></div>
+            <div
+              style="height: 100px"
+              class="shuJu flex1 baise mgr8 yingying"
+            ></div>
+            <div style="height: 100px" class="shuJu flex1 baise yingying"></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="height: 160px" class="baise mgt8 yingying"></div>
+            <div style="
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            ">
+        <p>版权所有:WuheGrapefruit.com</p>
+        <a href="WuheGrapefruit.com">我的网站</p>
+    </div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!--提示区-->
+          <div style="height: 150px" class="baise yingying"></div>
+          <!--消息区-->
+          <div style="height: 300px" class="baise mgt8 yingying"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
